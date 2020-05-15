@@ -5,6 +5,11 @@ const http = require('http');
 const path = require('path');
 
 const app = express();
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 let server = http.createServer(app);
 
 const publicPath = path.resolve(__dirname, '../public');
