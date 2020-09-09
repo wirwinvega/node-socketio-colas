@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 {"last":0,"today":15,"tickets":[]}
+=======
+{"last":11,"today":9,"tickets":[],"lastFourTickets":[{"number":11,"desk":"53"},{"number":10,"desk":"53"},{"number":9,"desk":"53"},{"number":8,"desk":"53"}]}
+>>>>>>> 5c197e91f296dfeb1bcbec63ee88da5487af27cd
