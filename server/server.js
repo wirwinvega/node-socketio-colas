@@ -17,6 +17,18 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
+app.get('/tracking', verifyToken, (req, res) => {
+    console.log("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*==*");
+    console.log("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*==*");
+    console.log("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*==*");
+    console.log("Locations received");
+    console.log(req);
+    res.json({
+        ok: true,
+        message: "Api to save locations is working"
+    });
+});
+
 app.post("/user/login", (req, res) => {
     return res.json({
         "server": "heroku",
