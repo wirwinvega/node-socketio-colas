@@ -7,17 +7,26 @@ const path = require('path');
 const app = express();
 let server = http.createServer(app);
 
+const bodyParser = require('body-parser')
+
+// parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false }));
+
+// parse application/json
+app.use(bodyParser.json());
+
 const publicPath = path.resolve(__dirname, '../public');
 const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
-app.get('/tracking', (req, res) => {
+app.post('/tracking', (req, res) => {
+    let body = req.body;
     console.log("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*==*");
     console.log("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*==*");
     console.log("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*==*");
     console.log("Locations received");
-    console.log(req);
+    console.log(body);
     res.json({
         ok: true,
         message: "Api to save locations is working"
