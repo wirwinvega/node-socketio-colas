@@ -13,19 +13,13 @@ class TicketControl {
         this.last = 0;
         this.today = new Date().getDate();
         this.tickets = [];
-<<<<<<< HEAD
-=======
         this.lastFourTickets = []
->>>>>>> 5c197e91f296dfeb1bcbec63ee88da5487af27cd
 
         let data = require('../data/data.json');
         if (this.today === data.today) {
             this.last = data.last;
             this.tickets = data.tickets;
-<<<<<<< HEAD
-=======
             this.lastFourTickets = data.lastFourTickets;
->>>>>>> 5c197e91f296dfeb1bcbec63ee88da5487af27cd
         } else {
             this.resetCount();
         }
@@ -44,11 +38,6 @@ class TicketControl {
         return `Ticket No. ${this.last}`;
     }
 
-<<<<<<< HEAD
-    resetCount() {
-        this.last = 0;
-        this.tickets = [];
-=======
     getLastFourTickets() {
         return this.lastFourTickets;
     }
@@ -62,11 +51,11 @@ class TicketControl {
         this.tickets.shift();
 
         let attendTicket = new Ticket(numTicket, desk);
-        
+
         this.lastFourTickets.unshift(attendTicket);
 
         if (this.lastFourTickets.length > 4) {
-            this.lastFourTickets.splice(-1,1);
+            this.lastFourTickets.splice(-1, 1);
         }
 
         this.saveFile();
@@ -79,7 +68,6 @@ class TicketControl {
         this.last = 0;
         this.tickets = [];
         this.lastFourTickets = [];
->>>>>>> 5c197e91f296dfeb1bcbec63ee88da5487af27cd
         this.saveFile();
         console.log("Se ha inicializado el sistema.");
     }
@@ -88,12 +76,8 @@ class TicketControl {
         let dataJson = JSON.stringify({
             "last": this.last,
             "today": this.today,
-<<<<<<< HEAD
-            "tickets": this.tickets
-=======
             "tickets": this.tickets,
             "lastFourTickets": this.lastFourTickets
->>>>>>> 5c197e91f296dfeb1bcbec63ee88da5487af27cd
         });
 
         fs.writeFileSync('./server/data/data.json', dataJson);

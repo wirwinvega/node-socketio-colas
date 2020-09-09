@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.static(publicPath));
 
-app.get('/tracking', verifyToken, (req, res) => {
+app.get('/tracking', (req, res) => {
     console.log("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*==*");
     console.log("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*==*");
     console.log("*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*=*==*");

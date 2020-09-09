@@ -5,23 +5,16 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
-        "start": "node server/server.js"
-=======
         "start": "node server/server.js",
         "dev": "nodemon server/server.js"
->>>>>>> 5c197e91f296dfeb1bcbec63ee88da5487af27cd
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
         "express": "^4.16.3",
         "socket.io": "^2.0.4"
-<<<<<<< HEAD
-=======
     },
     "devDependencies": {
         "nodemon": "^2.0.2"
->>>>>>> 5c197e91f296dfeb1bcbec63ee88da5487af27cd
     }
 }
